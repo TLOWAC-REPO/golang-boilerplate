@@ -14,8 +14,9 @@ func HttpLoggingMiddleware() fiber.Handler {
 	// 	Format: "[${time} | ${ip}]:${port} | ${latency} | ${status} - ${method} ${path}\n",
 	// }))
 
+	// http logging format
 	httpLoggingFormat := logger.Config{
-		Format: "[${time} | ${ip}]:${port} | ${latency} | ${status} - ${method} ${path}\n",
+		Format: "[${locals:requestid}][${time} | ${ip}]:${port} | ${latency} | ${status} - ${method} ${path}\n",
 	}
 
 	return logger.New(httpLoggingFormat)
