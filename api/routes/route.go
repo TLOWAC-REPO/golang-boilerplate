@@ -12,5 +12,5 @@ func SetupRoutes(app *fiber.App) {
 	v1 := api.Group("/v1")
 
 	// setup user routing path
-	userRoute(v1)
+	RegisterUserRoute(v1)
 }
