@@ -31,9 +31,35 @@
 
 ## Lib
 
-- [mocking](https://github.com/uber-go/mock)
-
+- [mocking - mock](https://github.com/uber-go/mock)
+  - [tdd - assert](github.com/stretchr/testify)
+- [logger - logrus](https://github.com/sirupsen/logrus)
+- [orm - ent](https://entgo.io/docs/getting-started/)
+- [framework - fiber](https://docs.gofiber.io/api/app)
+  - [한글 문서](https://docs.lou2.kr/go-fiber/home/guide/grouping)
 
 ## 구조 참고
 - https://github.com/atharv-bhadange/go-api-template/tree/main/api
 
+## 구현 참고
+[Middleware]
+- https://github.com/gofiber/fiber/issues/338
+- https://github.com/gofiber/fiber/tree/v2/middleware/basicauth
+- https://umi0410.github.io/blog/golang/how-to-backend-in-go-middleware/
+
+[Makefile]
+- https://github.com/gofiber/boilerplate/blob/master/Makefile
+- https://github.com/raeperd/kickstart.go/blob/main/Makefile
+
+[DB]
+- [ent - sql.DB 구성하기](https://entgo.io/docs/sql-integration/#use-pgx-with-postgresql) 
+
+
+## 구현 기능
+[Middleware]
+- http logging middleware
+- cors middleware
+- rate limiting middleware
+- recovery middleware
+- auth middleware
+- authorization middleware
