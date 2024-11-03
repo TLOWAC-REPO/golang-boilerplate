@@ -18,7 +18,7 @@ var (
 func GetClient() *ent.Client {
 	once.Do(func() {
 		var err error
-		client, err = ent.Open("postgres", "host=localhost port=5432 user=postgres dbname=golang-boilerplate-db password=postgres123 sslmode=disable")
+		client, err = ent.Open("postgres", "host=localhost port=5432 user=postgres dbname=postgres password=postgres123 sslmode=disable")
 		if err != nil {
 			log.Fatalf("failed opening connection to postgres: %v", err)
 		}
