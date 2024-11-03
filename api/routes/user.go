@@ -8,10 +8,12 @@ import (
 
 func RegisterUserRoute(router fiber.Router) {
 	// url path - api/v1/user
-	user := router.Group("/user")
+	userRoute := router.Group("/user")
 
-	user.Get("/", controllers.GetAllUsers)
-	user.Post("/", controllers.CreateUser)
-	user.Patch("/:id", controllers.UpdateUser)
-	user.Delete("/:id", controllers.DeleteUser)
+	userCtrl := controllers.NewUserCtrl()
+
+	userRoute.Get("/", userCtrl.GetAllUsers)
+	userRoute.Post("/", userCtrl.CreateUser)
+	userRoute.Patch("/:id", userCtrl.UpdateUser)
+	userRoute.Delete("/:id", userCtrl.DeleteUser)
 }
