@@ -1,17 +1,17 @@
 package routes
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"golang-boilerplate/api/controllers"
 
-func userRoute(router fiber.Router) {
-	router.Get("/", func(c *fiber.Ctx) error {
-		return c.Status(200).JSON(fiber.Map{"success": true})
-	})
+	"github.com/gofiber/fiber/v2"
+)
 
-	router.Get("/", func(c *fiber.Ctx) error {
-		return c.Status(200).JSON(fiber.Map{"success": true})
-	})
+func RegisterUserRoute(router fiber.Router) {
+	// url path - api/v1/user
+	user := router.Group("/user")
 
-	router.Get("/", func(c *fiber.Ctx) error {
-		return c.Status(200).JSON(fiber.Map{"success": true})
-	})
+	user.Get("/", controllers.GetAllUsers)
+	user.Post("/", controllers.CreateUser)
+	user.Patch("/:id", controllers.UpdateUser)
+	user.Delete("/:id", controllers.DeleteUser)
 }
