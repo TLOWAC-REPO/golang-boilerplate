@@ -32,11 +32,12 @@
 ## Lib
 
 - [mocking - mock](https://github.com/uber-go/mock)
-  - [tdd - assert](github.com/stretchr/testify)
+  - [tdd - testify/assert](github.com/stretchr/testify)
 - [logger - logrus](https://github.com/sirupsen/logrus)
 - [orm - ent](https://entgo.io/docs/getting-started/)
 - [framework - fiber](https://docs.gofiber.io/api/app)
   - [한글 문서](https://docs.lou2.kr/go-fiber/home/guide/grouping)
+- [config - viper](https://github.com/spf13/viper)
 
 ## 구조 참고
 - https://github.com/atharv-bhadange/go-api-template/tree/main/api
@@ -45,7 +46,7 @@
 [Middleware]
 - https://github.com/gofiber/fiber/issues/338
 - https://github.com/gofiber/fiber/tree/v2/middleware/basicauth
-- https://umi0410.github.io/blog/golang/how-to-backend-in-go-middleware/
+- [⭐] https://umi0410.github.io/blog/golang/how-to-backend-in-go-middleware/
 
 [Makefile]
 - https://github.com/gofiber/boilerplate/blob/master/Makefile
@@ -54,6 +55,14 @@
 [DB]
 - [ent - sql.DB 구성하기](https://entgo.io/docs/sql-integration/#use-pgx-with-postgresql) 
 
+[Config]
+- https://syntaxsugar.tistory.com/entry/Golang-Configuration
+- https://github.com/RohitBinjola/GolangAPIBoilerPlate/blob/main/Demo/src/config/config.go
+- https://articles.wesionary.team/environment-variable-configuration-in-your-golang-project-using-viper-4e8289ef664d
+- https://blog.logrocket.com/handling-go-configuration-viper/
+
+[Redis]
+- https://dev.to/truongpx396/golang-restful-api-with-gin-gorm-redis-cache-2gia
 
 ## 구현 기능
 [Middleware]
