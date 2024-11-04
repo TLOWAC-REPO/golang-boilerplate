@@ -5,6 +5,7 @@ import (
 	"fmt"
 	R "golang-boilerplate/api/routes"
 	"golang-boilerplate/ent/migrate"
+	"golang-boilerplate/internal/config"
 	"golang-boilerplate/internal/db"
 	M "golang-boilerplate/internal/middleware"
 	"log"
@@ -17,6 +18,13 @@ import (
 )
 
 func main() {
+	err := config.LoadEnvConfiguration(".", "config", "yaml")
+	if err != nil {
+		log.Fatalf("could not load configuration file: %w", err)
+	}
+
+	fmt.Println(config.Config.DB.Host)
+
 	run()
 }
 
