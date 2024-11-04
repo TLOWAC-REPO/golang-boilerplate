@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	client *ent.Client
+	Client *ent.Client
 	once   sync.Once
 )
 
@@ -18,15 +18,15 @@ var (
 func GetClient() *ent.Client {
 	once.Do(func() {
 		var err error
-		client, err = ent.Open("postgres", "host=localhost port=5432 user=postgres dbname=postgres password=postgres123 sslmode=disable")
+		Client, err = ent.Open("postgres", "host=localhost port=5432 user=postgres dbname=postgres password=postgres123 sslmode=disable")
 		if err != nil {
 			log.Fatalf("failed opening connection to postgres: %v", err)
 		}
 		// Run the auto migration tool.
-		if err := client.Schema.Create(context.Background(), migrate.WithForeignKeys(true)); err != nil {
+		if err := Client.Schema.Create(context.Background(), migrate.WithForeignKeys(true)); err != nil {
 			log.Fatalf("failed creating schema resources: %v", err)
 		}
 	})
 
-	return client
+	return Client
 }
