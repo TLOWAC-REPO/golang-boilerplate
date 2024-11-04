@@ -20,7 +20,9 @@ type Configuration struct {
 	DB     DbConfig
 }
 
-func LoadEnvConfiguration(configPath, configName, configType string) (*Configuration, error) {
+var Config *Configuration
+
+func LoadEnvConfiguration(configPath, configName, configType string) error {
 	var config *Configuration
 
 	// config 파일 경로 설정
@@ -42,5 +44,6 @@ func LoadEnvConfiguration(configPath, configName, configType string) (*Configura
 		fmt.Errorf("could not unmarshal: %v", err)
 	}
 
-	return config, nil
+	Config = config
+	return nil
 }
