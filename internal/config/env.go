@@ -6,24 +6,20 @@ import (
 	"github.com/spf13/viper"
 )
 
-type ServerConfig struct {
-	Port string
-	Host string
+type Environment struct {
+	ServerHost string `mapstructure:"SERVER_HOST"`
+	ServerPort string `mapstructure:"SERVER_PORT"`
+	DBHost     string `mapstructure:"DB_HOST"`
+	DBPort     string `mapstructure:"DB_PORT"`
+	DBUser     string `mapstructure:"DB_USER"`
+	DBPwd      string `mapstructure:"DB_Password"`
+	DBName     string `mapstructure:"DB_NAME"`
 }
 
-type DbConfig struct {
-	Host string
-}
-
-type Configuration struct {
-	Server ServerConfig
-	DB     DbConfig
-}
-
-var Config *Configuration
+var env *Environment
 
 func LoadEnvConfiguration(configPath, configName, configType string) error {
-	var config *Configuration
+	var config *Environment
 
 	// config 파일 경로 설정
 	viper.AddConfigPath(configPath)
@@ -44,6 +40,6 @@ func LoadEnvConfiguration(configPath, configName, configType string) error {
 		fmt.Errorf("could not unmarshal: %v", err)
 	}
 
-	Config = config
+	env = config
 	return nil
 }
