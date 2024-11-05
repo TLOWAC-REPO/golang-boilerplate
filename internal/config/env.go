@@ -16,7 +16,7 @@ type Environment struct {
 	DBName     string `mapstructure:"DB_NAME"`
 }
 
-var env *Environment
+var Env *Environment
 
 func LoadEnvConfiguration(configPath, configName, configType string) error {
 	var config *Environment
@@ -40,6 +40,6 @@ func LoadEnvConfiguration(configPath, configName, configType string) error {
 		fmt.Errorf("could not unmarshal: %v", err)
 	}
 
-	env = config
+	Env = config
 	return nil
 }
